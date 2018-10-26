@@ -1,0 +1,7 @@
+---
+- hosts: liferay
+  become: yes
+  vars:
+  remote_user: portlet
+  tasks:
+     - include: training.yml

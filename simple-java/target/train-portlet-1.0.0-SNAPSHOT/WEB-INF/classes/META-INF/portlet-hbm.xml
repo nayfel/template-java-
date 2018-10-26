@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="ms3.service.model.Assignment" />
+	<import class="ms3.service.model.Course" />
+	<import class="ms3.service.model.DailyLog" />
+	<import class="ms3.service.model.Track" />
+	<import class="ms3.service.model.TrackAssignment" />
+	<class name="ms3.service.model.impl.AssignmentImpl" table="train_Assignment">
+		<cache usage="read-write" />
+		<id name="assignmentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="courses_title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ms3employeedb_uid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="assignedDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="certification" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="hoursSpent" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="currentSection" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="admin" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="ms3.service.model.impl.CourseImpl" table="train_Course">
+		<cache usage="read-write" />
+		<id name="title" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="listPrice" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="provider" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="courseId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="estimatedHours" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="sections" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="skills" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="ms3.service.model.impl.DailyLogImpl" table="train_DailyLog">
+		<cache usage="read-write" />
+		<id name="dailyLogId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="assignment_id" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="date" type="com.liferay.portal.dao.orm.hibernate.StringType" column="date_" />
+		<property name="accomplishments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="roadblocks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="plan" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hours" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="section" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="ms3.service.model.impl.TrackImpl" table="train_Track">
+		<cache usage="read-write" />
+		<id name="trackId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="courseList" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="accreditation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="ms3.service.model.impl.TrackAssignmentImpl" table="train_TrackAssignment">
+		<cache usage="read-write" />
+		<id name="trackAssignmentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="trackId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userScreenName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="assignmentIdList" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAssigned" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="admin" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

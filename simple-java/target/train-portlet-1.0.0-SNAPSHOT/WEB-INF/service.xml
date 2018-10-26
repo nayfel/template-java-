@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="ms3.service">
+	<author>jackt</author>
+	<namespace>train</namespace>
+
+      <entity name="Course" local-service="true">
+        <column name="title" type="String" primary="true"></column>
+        <column name="description" type="String"></column>
+        <column name="listPrice" type="String"></column>
+        <column name="provider" type="String"></column>
+        <column name="courseId" type="long" primary="false"></column>
+        <column name="estimatedHours" type="double"></column>
+        <column name="sections" type="String"></column>
+        <column name="skills" type="String"></column>
+        
+        <finder name="CourseId" return-type="Course">
+            <finder-column name="courseId"></finder-column>
+        </finder>
+        <finder name="Title" return-type="Course" unique="false">
+            <finder-column name="title"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Assignment" local-service="true">
+        <column name="assignmentId" primary="true" type="long"></column>
+        <column name="courses_title" type="String" primary="false"></column>
+        <column name="ms3employeedb_uid" type="String" primary="false"></column>
+        <column name="assignedDate" type="String"></column>
+        <column name="startDate" type="String"></column>
+        <column name="endDate" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="cost" type="String"></column>
+        <column name="certification" type="boolean"></column>
+        <column name="hoursSpent" type="double"></column>
+        <column name="currentSection" type="String"></column>
+        <column name="notes" type="String"></column>
+        <column name="admin" type="String"></column>
+        
+        <finder name="Courses_title" return-type="Collection">
+        	<finder-column name="courses_title"></finder-column>
+        </finder>
+        <finder name="Ms3employeedb_uid" return-type="Collection">
+        	<finder-column name="ms3employeedb_uid"></finder-column>
+        </finder>
+        <finder name="assignmentId" return-type="Assignment">
+            <finder-column name="assignmentId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="DailyLog" local-service="true">
+        <column name="dailyLogId" type="long" primary="true"></column>
+        <column name="assignment_id" type="long"></column>
+        <column name="date" type="String"></column>
+        <column name="accomplishments" type="String"></column>
+        <column name="roadblocks" type="String"></column>
+        <column name="plan" type="String"></column>
+        <column name="notes" type="String"></column>
+        <column name="hours" type="double"></column>
+        <column name="section" type="String"></column>
+        <finder name="dailyLogId" return-type="DailyLog">
+            <finder-column name="dailyLogId"></finder-column>
+        </finder>
+        <finder name="assignment_id" return-type="Collection">
+            <finder-column name="assignment_id"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Track" local-service="true">
+        <column name="trackId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="courseList" type="String"></column>
+        <column name="accreditation" type="String"></column>
+        <finder name="trackId" return-type="Track">
+            <finder-column name="trackId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="TrackAssignment" local-service="true">
+        <column name="trackAssignmentId" type="long" primary="true"></column>
+        <column name="trackId" type="long"></column>
+        <column name="userScreenName" type="String"></column>
+        <column name="assignmentIdList" type="String"></column>
+        <column name="dateAssigned" type="String"></column>
+        <column name="admin" type="String"></column>
+        <finder name="userScreenName" return-type="Collection">
+            <finder-column name="userScreenName"></finder-column>
+        </finder>
+        <finder name="trackId" return-type="Collection">
+            <finder-column name="trackId"></finder-column>
+        </finder>
+    </entity>
+</service-builder>

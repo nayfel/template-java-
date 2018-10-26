@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ms3.service.service.AssignmentLocalService" class="ms3.service.service.impl.AssignmentLocalServiceImpl" />
+	<bean id="ms3.service.service.AssignmentService" class="ms3.service.service.impl.AssignmentServiceImpl" />
+	<bean id="ms3.service.service.persistence.AssignmentPersistence" class="ms3.service.service.persistence.AssignmentPersistenceImpl" parent="basePersistence" />
+	<bean id="ms3.service.service.CourseLocalService" class="ms3.service.service.impl.CourseLocalServiceImpl" />
+	<bean id="ms3.service.service.CourseService" class="ms3.service.service.impl.CourseServiceImpl" />
+	<bean id="ms3.service.service.persistence.CoursePersistence" class="ms3.service.service.persistence.CoursePersistenceImpl" parent="basePersistence" />
+	<bean id="ms3.service.service.DailyLogLocalService" class="ms3.service.service.impl.DailyLogLocalServiceImpl" />
+	<bean id="ms3.service.service.DailyLogService" class="ms3.service.service.impl.DailyLogServiceImpl" />
+	<bean id="ms3.service.service.persistence.DailyLogPersistence" class="ms3.service.service.persistence.DailyLogPersistenceImpl" parent="basePersistence" />
+	<bean id="ms3.service.service.TrackLocalService" class="ms3.service.service.impl.TrackLocalServiceImpl" />
+	<bean id="ms3.service.service.TrackService" class="ms3.service.service.impl.TrackServiceImpl" />
+	<bean id="ms3.service.service.persistence.TrackPersistence" class="ms3.service.service.persistence.TrackPersistenceImpl" parent="basePersistence" />
+	<bean id="ms3.service.service.TrackAssignmentLocalService" class="ms3.service.service.impl.TrackAssignmentLocalServiceImpl" />
+	<bean id="ms3.service.service.TrackAssignmentService" class="ms3.service.service.impl.TrackAssignmentServiceImpl" />
+	<bean id="ms3.service.service.persistence.TrackAssignmentPersistence" class="ms3.service.service.persistence.TrackAssignmentPersistenceImpl" parent="basePersistence" />
+</beans>

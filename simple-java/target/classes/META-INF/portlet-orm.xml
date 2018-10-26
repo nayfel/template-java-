@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="ms3.service.model.impl.AssignmentModelImpl">
+		<attributes>
+			<id name="assignmentId" />
+			<basic name="courses_title" />
+			<basic name="ms3employeedb_uid" />
+			<basic name="assignedDate" />
+			<basic name="startDate" />
+			<basic name="endDate" />
+			<basic name="status" />
+			<basic name="cost" />
+			<basic name="certification" />
+			<basic name="hoursSpent" />
+			<basic name="currentSection" />
+			<basic name="notes" />
+			<basic name="admin" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="ms3.service.model.impl.CourseModelImpl">
+		<attributes>
+			<id name="title" />
+			<basic name="description" />
+			<basic name="listPrice" />
+			<basic name="provider" />
+			<basic name="courseId" />
+			<basic name="estimatedHours" />
+			<basic name="sections" />
+			<basic name="skills" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="ms3.service.model.impl.DailyLogModelImpl">
+		<attributes>
+			<id name="dailyLogId" />
+			<basic name="assignment_id" />
+			<basic name="date">
+				<column name="DATE_" />
+			</basic>
+			<basic name="accomplishments" />
+			<basic name="roadblocks" />
+			<basic name="plan" />
+			<basic name="notes" />
+			<basic name="hours" />
+			<basic name="section" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="ms3.service.model.impl.TrackModelImpl">
+		<attributes>
+			<id name="trackId" />
+			<basic name="title" />
+			<basic name="description" />
+			<basic name="courseList" />
+			<basic name="accreditation" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="ms3.service.model.impl.TrackAssignmentModelImpl">
+		<attributes>
+			<id name="trackAssignmentId" />
+			<basic name="trackId" />
+			<basic name="userScreenName" />
+			<basic name="assignmentIdList" />
+			<basic name="dateAssigned" />
+			<basic name="admin" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="ms3.service.model.impl.AssignmentImpl" name="Assignment">
+		<table name="train_Assignment" />
+		<attributes />
+	</entity>
+	<entity class="ms3.service.model.impl.CourseImpl" name="Course">
+		<table name="train_Course" />
+		<attributes />
+	</entity>
+	<entity class="ms3.service.model.impl.DailyLogImpl" name="DailyLog">
+		<table name="train_DailyLog" />
+		<attributes />
+	</entity>
+	<entity class="ms3.service.model.impl.TrackImpl" name="Track">
+		<table name="train_Track" />
+		<attributes />
+	</entity>
+	<entity class="ms3.service.model.impl.TrackAssignmentImpl" name="TrackAssignment">
+		<table name="train_TrackAssignment" />
+		<attributes />
+	</entity>
+</entity-mappings>

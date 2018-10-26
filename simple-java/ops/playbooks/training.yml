@@ -1,0 +1,2 @@
+- name: copy the portlet application
+  copy: src=/var/lib/jenkins/workspace/Training-portlet/target/train-portlet-1.0.0-SNAPSHOT.war dest=/opt/liferay/liferay-portal-6.2-ce-ga4/deploy

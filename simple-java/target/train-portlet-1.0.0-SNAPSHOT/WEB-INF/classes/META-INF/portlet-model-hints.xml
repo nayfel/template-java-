@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ms3.service.model.Assignment">
+		<field name="assignmentId" type="long" />
+		<field name="courses_title" type="String" />
+		<field name="ms3employeedb_uid" type="String" />
+		<field name="assignedDate" type="String" />
+		<field name="startDate" type="String" />
+		<field name="endDate" type="String" />
+		<field name="status" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="cost" type="String" />
+		<field name="certification" type="boolean" />
+		<field name="hoursSpent" type="double" />
+		<field name="currentSection" type="String" />
+		<field name="notes" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="admin" type="String" />
+	</model>
+	<model name="ms3.service.model.Course">
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="listPrice" type="String" />
+		<field name="provider" type="String" />
+		<field name="courseId" type="long" />
+		<field name="estimatedHours" type="double" />
+		<field name="sections" type="String" />
+		<field name="skills" type="String" />
+	</model>
+	<model name="ms3.service.model.DailyLog">
+		<field name="dailyLogId" type="long" />
+		<field name="assignment_id" type="long" />
+		<field name="date" type="String" />
+		<field name="accomplishments" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="roadblocks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="plan" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="notes" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="hours" type="double" />
+		<field name="section" type="String" />
+	</model>
+	<model name="ms3.service.model.Track">
+		<field name="trackId" type="long" />
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="courseList" type="String" />
+		<field name="accreditation" type="String" />
+	</model>
+	<model name="ms3.service.model.TrackAssignment">
+		<field name="trackAssignmentId" type="long" />
+		<field name="trackId" type="long" />
+		<field name="userScreenName" type="String" />
+		<field name="assignmentIdList" type="String" />
+		<field name="dateAssigned" type="String" />
+		<field name="admin" type="String" />
+	</model>
+</model-hints>
