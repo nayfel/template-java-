@@ -2,6 +2,6 @@
 - hosts: liferay
   become: yes
   vars:
-  remote_user: portlet
+  remote_user: ubuntu
   tasks:
      - include: training.yml
