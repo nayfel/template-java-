@@ -1,2 +1,2 @@
 [liferay]
-10.1.2.196 ansible_connection=ssh ansible_ssh_user=portlet
+18.234.165.108 ansible_connection=ssh ansible_ssh_user=ubuntu
