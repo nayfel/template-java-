@@ -1,2 +1,2 @@
 # template-java-
-Simple java 
+Simple java 101 
