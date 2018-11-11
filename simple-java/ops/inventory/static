@@ -1,2 +1,2 @@
-[liferay]
-18.234.165.108 ansible_connection=ssh ansible_ssh_user=ubuntu
+[webserver]
+172.31.82.246
