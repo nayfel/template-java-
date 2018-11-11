@@ -1,7 +1,7 @@
 ---
-- hosts: liferay
+- hosts: webserver
   become: yes
   vars:
-  remote_user: ubuntu
+  remote_user: ansadmin
   tasks:
      - include: training.yml
