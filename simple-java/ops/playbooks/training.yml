@@ -1,2 +1,2 @@
 - name: copy the portlet application
-  copy: src=/var/lib/jenkins/workspace/JAVA_PROJECT/simple-java/target/train-portlet-1.0.0-SNAPSHOT.war dest=/home/ubuntu/
+  copy: src=/etc/ansible/template-java-/simple-java/target/train-portlet-1.0.0-SNAPSHOT.war dest=/home/ansadmin/
